@@ -1,6 +1,6 @@
 <?php
 
-namespace Mpdf\Fonts\Unicode;
+namespace Mpdf\Fonts\Unicode\Config;
 
 use Mpdf\Fonts\FontRegistration;
 use Mpdf\Fonts\Unicode\Language\LanguageToFont;
@@ -26,7 +26,7 @@ class FontVariables extends FontRegistration
      */
     public function getFontDir()
     {
-        return __DIR__.'/../ttfonts/';
+        return __DIR__ . '/../../ttfonts/';
     }
 
     /**
@@ -150,7 +150,7 @@ class FontVariables extends FontRegistration
     }
 
     /**
-     * Get a list of substituted fonts used when a font is not available in mPDF. Define 'sans', 'serif', and 'mono'
+     * Get a list of substituted fonts used when a font is not available in mPDF. Define 'sans_fonts', 'serif_fonts', and 'mono_fonts'
      * fallback fonts as necessary.
      *
      * @return array Multidimensional array with keys 'sans', 'serif', and 'mono'. Each array should use the keys found
@@ -160,19 +160,19 @@ class FontVariables extends FontRegistration
     public function getFontFamilySubstitution()
     {
         return [
-            'sans' => [
+            'sans_fonts' => [
                 'dejavusanscondensed',
                 'dejavusans',
                 'freesans',
             ],
 
-            'serif' => [
+            'serif_fonts' => [
                 'dejavuserifcondensed',
                 'dejavuserif',
                 'freeserif',
             ],
 
-            'mono' => [
+            'mono_fonts' => [
                 'dejavusansmono',
                 'freemono',
             ],
